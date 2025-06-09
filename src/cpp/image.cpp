@@ -93,6 +93,8 @@ JS_IMPLEMENT_METHOD(Image, _load) { THIS_CHECK;
 		FreeImage_Unload(_bitmap);
 	}
 	
+	FreeImage_FlipVertical(tmpBitmap);
+
 	_bitmap = FreeImage_ConvertTo32Bits(tmpBitmap);
 	
 	FreeImage_Unload(tmpBitmap);
